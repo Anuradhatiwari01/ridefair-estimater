@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
+.container {
+  max_width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+.card {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+button:hover {
+  background-color: #0056b3;
+}
+input, select {
+  padding: 8px;
+  margin: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+h1 { color: #2c3e50; }
+.scam { color: red; font-weight: bold; }
+.safe { color: green; font-weight: bold; }

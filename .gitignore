@@ -1,0 +1,12 @@
+# Ignore Mac/Windows system files
+.DS_Store
+Thumbs.db
+
+# Ignore Python Junk
+backend/venv/
+backend/__pycache__/
+*.pkl  # Optional: Don't upload big model files if they are >100MB, but for now keep it.
+
+# Ignore Node Modules (Crucial!)
+frontend/node_modules/
+frontend/dist/
