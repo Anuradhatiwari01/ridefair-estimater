@@ -43,12 +43,11 @@ function App() {
     <div className="container">
       <h1>🚖 RideFair: AI Fare Estimator</h1>
       
-      {/* SECTION 1: K-MEANS CLUSTERING VISUALIZATION */}
+      {/*K-MEANS CLUSTERING VISUALIZATION */}
       <div className="card">
         <h3>📍 High Demand Zones (AI Clusters)</h3>
         <p><i>Powered by K-Means Algorithm</i></p>
         <div style={{ height: '300px', width: '100%' }}>
-          {/* Centered on approx location */}
           <MapContainer center={[28.58, 77.33]} zoom={12} style={{ height: '100%', width: '100%' }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -64,7 +63,7 @@ function App() {
 
       <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
         
-        {/* SECTION 2: LINEAR REGRESSION */}
+        {/* LINEAR REGRESSION */}
         <div className="card" style={{ flex: 1 }}>
           <h3>💰 Fair Price Predictor</h3>
           <p><i>Algorithm: Linear Regression</i></p>
@@ -96,7 +95,7 @@ function App() {
           )}
         </div>
 
-        {/* SECTION 3: LOGISTIC REGRESSION */}
+        {/* LOGISTIC REGRESSION */}
         <div className="card" style={{ flex: 1 }}>
           <h3>🚨 Scam Detector</h3>
           <p><i>Algorithm: Logistic Regression</i></p>
