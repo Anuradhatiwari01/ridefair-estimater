@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-// This points to your running Python backend
+// Running Python backend
 const API_URL = 'https://ridefair-estimater.onrender.com/';
 
 export const getFairPrice = async (distance, hour, isWeekend) => {
