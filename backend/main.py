@@ -8,20 +8,17 @@ import numpy as np
 # Initialize the App
 app = FastAPI(title="RideFair AI API", version="1.0")
 
-# ==========================================
-# 1. CORS SECURITY FIX (Crucial for React)
-# ==========================================
+# CORS SECURITY FIX
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows all frontends to talk to this backend
+    allow_origins=["*"], 
     allow_credentials=True,
-    allow_methods=["*"],  # Allows all methods (POST, GET, etc.)
+    allow_methods=["*"], 
     allow_headers=["*"],
 )
 
-# ==========================================
-# 2. LOAD THE TRAINED MODELS
-# ==========================================
+
+# LOAD THE TRAINED MODELS
 try:
     with open("all_models.pkl", "rb") as f:
         models = pickle.load(f)
@@ -29,13 +26,11 @@ try:
     price_model = models["price_model"]
     scam_model = models["scam_model"]
     hotspot_model = models["hotspot_model"]
-    print("✅ Models loaded successfully!")
+    print("Models loaded successfully!")
 except FileNotFoundError:
-    print("❌ ERROR: 'all_models.pkl' not found. Run train_ai.py first!")
+    print("ERROR: 'all_models.pkl' not found. Run train_ai.py first!")
 
-# ==========================================
-# 3. DEFINE INPUT FORMATS
-# ==========================================
+#  DEFINE INPUT FORMATS
 class PriceRequest(BaseModel):
     distance_km: float
     hour: int
@@ -45,15 +40,12 @@ class ScamRequest(BaseModel):
     distance_km: float
     price_asked: float
 
-# ==========================================
-# 4. API ENDPOINTS
-# ==========================================
+#  API ENDPOINTS
 
 @app.get("/")
 def home():
     return {"message": "RideFair AI is Online."}
 
-# --- ENDPOINT A: PREDICT FAIR PRICE ---
 @app.post("/predict-price")
 def predict_price(data: PriceRequest):
     features = pd.DataFrame([{
@@ -69,7 +61,6 @@ def predict_price(data: PriceRequest):
         "message": "Calculated based on historical data."
     }
 
-# --- ENDPOINT B: DETECT SCAM ---
 @app.post("/detect-scam")
 def detect_scam(data: ScamRequest):
     # Calculate price_per_km because the model expects it
@@ -95,7 +86,6 @@ def detect_scam(data: ScamRequest):
         "warning": "Price is abnormally high!" if is_scam == 1 else "Price looks reasonable."
     }
 
-# --- ENDPOINT C: GET HOTSPOTS ---
 @app.get("/hotspots")
 def get_hotspots():
     centers = hotspot_model.cluster_centers_
