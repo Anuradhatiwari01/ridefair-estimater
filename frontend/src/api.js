@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Running Python backend
-const API_URL = 'https://ridefair-estimater.onrender.com/';
+const API_URL = 'https://ridefair-estimater.onrender.com';
 
 export const getFairPrice = async (distance, hour, isWeekend) => {
     const response = await axios.post(`${API_URL}/predict-price`, {
