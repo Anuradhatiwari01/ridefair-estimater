@@ -46,9 +46,3 @@ I integrated **three specific algorithms** to solve different parts of the probl
 * **System Architecture:** Decoupled Frontend and Backend communicating via REST APIs.
 
 ---
-
-###  Future Improvements
-* **Crowdsourcing:** Allowing users to submit their real ride data to retrain the models automatically.
-* **Google Maps API:** Upgrading from Haversine distance to real-time road traffic analysis.
-
----
