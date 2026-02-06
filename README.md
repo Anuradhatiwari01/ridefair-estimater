@@ -1,7 +1,7 @@
 # RideFair – Auto Fare Estimator for Students
 
 ## Live Demo
-🔗 [(https://ride-fair-estimater.vercel.app/)]
+🔗 https://ride-fair-estimater.vercel.app/
 
 ---
 
